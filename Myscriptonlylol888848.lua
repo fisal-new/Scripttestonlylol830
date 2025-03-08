@@ -63,6 +63,21 @@ PlayerTab:CreateSlider({
     end
 })
 
+-- إضافة زر لتجديد الصحة في تبويب Player
+PlayerTab:CreateButton({
+    Name = "Health Regen",  -- اسم الزر
+    Callback = function()   -- وظيفة لتجديد الصحة
+        local player = game.Players.LocalPlayer
+        local char = player.Character
+        if char then
+            local humanoid = char:FindFirstChildOfClass("Humanoid")
+            if humanoid then
+                humanoid.Health = humanoid.MaxHealth  -- استرجاع الصحة بالكامل
+            end
+        end
+    end
+})
+
 -- تأثير النار على اللاعب
 EffectsTab:CreateButton({
     Name = "Fire Effect",               -- اسم الزر
@@ -107,6 +122,27 @@ FunTab:CreateButton({
                 humanoid.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOff -- إخفاء شريط الصحة
             end
         end
+    end
+})
+
+-- إضافة زر لإنشاء الأسلحة المخصصة
+FunTab:CreateButton({
+    Name = "Create Custom Weapon",         -- اسم الزر
+    Callback = function()                  -- وظيفة لإنشاء السلاح
+        local weapon = Instance.new("Tool")  -- إنشاء الأداة الجديدة (السلاح)
+        weapon.Name = "Super Sword"         -- اسم السلاح
+        weapon.Parent = game.Players.LocalPlayer.Backpack  -- إضافة السلاح إلى حقيبة اللاعب
+        weapon.GripPos = Vector3.new(0, 0, 0)  -- تحديد موقع قبضة السلاح
+        weapon.ToolTip = "Super Weapon"      -- نص يظهر عندما يمرر اللاعب الماوس فوق السلاح
+        -- إضافة خصائص السلاح مثل ضرر كبير عند تفعيله
+        weapon.Activated:Connect(function()
+            -- فرض ضرر على الأعداء القريبين من اللاعب
+            for _, enemy in pairs(workspace:GetChildren()) do
+                if enemy:IsA("Model") and enemy:FindFirstChild("Humanoid") then
+                    enemy.Humanoid:TakeDamage(100)  -- فرض ضرر 100 على العدو
+                end
+            end
+        end)
     end
 })
 
@@ -188,9 +224,38 @@ MiscTab:CreateButton({
     end
 })
 
--- إشعار عند تحميل السكربت
-Window:CreateNotification({
-    Title = "Rayfield UI Loaded",       -- عنوان الإشعار
-    Content = "UI Loaded Successfully!", -- محتوى الإشعار
-    Duration = 5                        -- مدة الإشعار
+-- إضافة زر Godmode
+PlayerTab:CreateButton({
+    Name = "Godmode",                  -- اسم الزر
+    Callback = function()              -- وظيفة لتفعيل الـ Godmode
+        local player = game.Players.LocalPlayer
+        local char = player.Character
+        if char then
+            local humanoid = char:FindFirstChildOfClass("Humanoid")
+            if humanoid then
+                humanoid.Health = math.huge  -- تعيين الصحة إلى اللانهائية
+            end
+        end
+    end
+})
+
+-- إضافة زر NoClip
+MiscTab:CreateButton({
+    Name = "NoClip",                    -- اسم الزر
+    Callback = function()               -- وظيفة لتفعيل NoClip
+        loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Noclip-script-19755"))()  -- تحميل سكربت NoClip
+    end
+})
+
+-- إضافة زر Anti-AFK
+MiscTab:CreateButton({
+    Name = "Anti-AFK",                  -- اسم الزر
+    Callback = function()               -- وظيفة لمنع الحضور التلقائي
+        -- متابعة التفاعل مع اللعبة بشكل مستمر
+        while true do
+            -- تحريك الشخصية قليلاً كل فترة
+            game.Players.LocalPlayer.Character.Humanoid:Move(Vector3.new(1, 0, 0)) 
+            wait(60)  -- الانتظار 60 ثانية قبل تكرار الحركة (كل دقيقة)
+        end
+    end
 })

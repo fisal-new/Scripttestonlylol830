@@ -1,8 +1,5 @@
-eId))
-        print("تم نسخ ID الماب إلى الحافظة!")
-    end
-})
-local PlaceId = game.PlaceId  -- الحصول على الـ PlaceId الحالي
+-- الحصول على الـ PlaceId الحالي
+local PlaceId = game.PlaceId  
 
 -- تحميل Rayfield UI
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()  
@@ -24,7 +21,6 @@ local SocialTab = Window:CreateTab("Social")
 
 -- تبويبات خاصة حسب الماب
 if PlaceId == 2753915549 then
-    -- إذا كان الماب Blox Fruits
     local BloxFruitsTab = Window:CreateTab("Blox Fruits")
     BloxFruitsTab:CreateButton({
         Name = "Run RedZ Hub",
@@ -33,7 +29,6 @@ if PlaceId == 2753915549 then
         end
     })
 elseif PlaceId == 13772394625 or PlaceId == 16281300371 then
-    -- إذا كان الماب Blade Ball
     local BladeBallTab = Window:CreateTab("Blade Ball")
     BladeBallTab:CreateButton({
         Name = "Auto Parry",
@@ -42,7 +37,6 @@ elseif PlaceId == 13772394625 or PlaceId == 16281300371 then
         end
     })
 elseif PlaceId == 9872472334 then
-    -- إذا كان الماب Evade
     local EvadeTab = Window:CreateTab("Evade")
     EvadeTab:CreateButton({
         Name = "Load Evade Script",
@@ -51,7 +45,6 @@ elseif PlaceId == 9872472334 then
         end
     })
 elseif PlaceId == 116495829188952 then
-    -- إذا كان الماب Dead Rails
     local DeadRailsTab = Window:CreateTab("Dead Rails")
     DeadRailsTab:CreateButton({
         Name = "SpiderX Hub",
@@ -59,14 +52,7 @@ elseif PlaceId == 116495829188952 then
             loadstring(game:HttpGet("https://rawscripts.net/raw/Dead-Rails-Alpha-New-Update-SpiderXHub-30981"))()
         end
     })
-    DeadRailsTab:CreateButton({
-        Name = "SpeedHub X",
-        Callback = function()
-            loadstring(game:HttpGet("https://rawscripts.net/raw/a-literal-baseplate.-Speedhub-X-30971"))()
-        end
-    })
 elseif PlaceId == 16200303170 then
-    -- إذا كان الماب Project Smash
     local ProjectSmashTab = Window:CreateTab("Project Smash")
     ProjectSmashTab:CreateButton({
         Name = "Load Script",
@@ -75,7 +61,6 @@ elseif PlaceId == 16200303170 then
         end
     })
 elseif PlaceId == 115110570222234 then
-    -- إذا كان الماب Blue Lock
     local BlueLockTab = Window:CreateTab("Blue Lock")
     BlueLockTab:CreateButton({
         Name = "Load Blue Lock Script",
@@ -84,7 +69,6 @@ elseif PlaceId == 115110570222234 then
         end
     })
 elseif PlaceId == 16732694052 then
-    -- إذا كان الماب Fisch
     local FischTab = Window:CreateTab("Fisch")
     FischTab:CreateButton({
         Name = "Run Fisch Script",
@@ -93,7 +77,6 @@ elseif PlaceId == 16732694052 then
         end
     })
 elseif PlaceId == 142823291 then
-    -- إذا كان الماب MM2
     local MM2Tab = Window:CreateTab("MM2")
     MM2Tab:CreateButton({
         Name = "Run Oblivion AUTO EXE",
@@ -102,7 +85,6 @@ elseif PlaceId == 142823291 then
         end
     })
 elseif PlaceId == 4924922222 then
-    -- إذا كان الماب Brookhaven
     local BrookhavenTab = Window:CreateTab("Brookhaven")
     BrookhavenTab:CreateButton({
         Name = "Load Brookhaven RP Script",
@@ -140,6 +122,17 @@ PlayerTab:CreateSlider({
     CurrentValue = 50,
     Callback = function(value)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+    end
+})
+
+PlayerTab:CreateSlider({
+    Name = "Health",
+    Range = {0, 100},
+    Increment = 1,
+    Suffix = "Health",
+    CurrentValue = 100,
+    Callback = function(value)
+        game.Players.LocalPlayer.Character.Humanoid.Health = value
     end
 })
 

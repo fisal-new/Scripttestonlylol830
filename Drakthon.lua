@@ -1,35 +1,55 @@
 local PlaceId = game.PlaceId  -- الحصول على الـ PlaceId الحالي
-
+--ماني مسامح اي شخص يسرق تعبي جعله للغرغرينا تقول اساسا السكربت حرام يعني ماهي فارقه اقلك حتا لو يهودي حرامم
 -- تحميل Rayfield UI
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()  
 local Window = Rayfield:CreateWindow({
-    Name = "drakthon",        
-    LoadingTitle = "loading drakrhon...", 
-    LoadingSubtitle = "by Drakthon",     
-    KeySystem = false                    
+    Name = "drakthon",
+    LoadingTitle = "loading drakrhon...",
+    LoadingSubtitle = "by Drakthon",
+    KeySystem = false
 })
 
--- تبويبات
+-- تبويبات عامة
 local PlayerTab = Window:CreateTab("Player Settings")
 local EffectsTab = Window:CreateTab("Effects")
 local MiscTab = Window:CreateTab("Misc")
 local FunTab = Window:CreateTab("Fun")
 local TimeTab = Window:CreateTab("Time Settings")
+local MusicTab = Window:CreateTab("Music")
 
--- إضافة "Blox Fruits" فقط إذا كان الـ PlaceId مطابقًا
+-- تبويبات خاصة حسب الماب
 if PlaceId == 2753915549 then
+    -- إذا كان الماب Blox Fruits
     local BloxFruitsTab = Window:CreateTab("Blox Fruits")
-
-    -- إضافة RedZ Hub
     BloxFruitsTab:CreateButton({
-        Name = "RedZ Hub",
+        Name = "Run RedZ Hub",
         Callback = function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()
         end
     })
+elseif PlaceId == 13772394625 or PlaceId == 16281300371 then
+    -- إذا كان الماب Blade Ball
+    local BladeBallTab = Window:CreateTab("Blade Ball")
+    BladeBallTab:CreateButton({
+        Name = "Auto Parry",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blade-Ball-Drop-Farm-10716"))()
+        end
+    })
+elseif PlaceId == 9872472334 then
+    -- إذا كان الماب Evade
+    local EvadeTab = Window:CreateTab("Evade")
+    EvadeTab:CreateButton({
+        Name = "Load Evade Script",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Evade-Evade-The-Best-Free-GUI-Script-lots-of-Features-20718"))()
+        end
+    })
 end
 
--- إعدادات اللاعب
+-- باقي السكربتات العامة:
+
+-- تبويب Player Settings
 PlayerTab:CreateSlider({
     Name = "Walk Speed",
     Range = {16, 200},
@@ -66,7 +86,7 @@ PlayerTab:CreateButton({
     end
 })
 
--- التأثيرات
+-- تبويب Effects
 EffectsTab:CreateButton({
     Name = "Fire Effect",
     Callback = function()
@@ -89,7 +109,7 @@ EffectsTab:CreateButton({
     end
 })
 
--- ميزات التسلية
+-- تبويب Fun
 FunTab:CreateButton({
     Name = "Invisible",
     Callback = function()
@@ -98,9 +118,13 @@ FunTab:CreateButton({
         if char then
             for _, part in pairs(char:GetChildren()) do
                 if part:IsA("BasePart") then
-                    part.Transparency = 1  
+                    part.Transparency = 1
                     part.CanCollide = false
                 end
+            end
+            local humanoid = char:FindFirstChildOfClass("Humanoid")
+            if humanoid then
+                humanoid.HealthDisplayType = Enum.HumanoidHealthDisplayType.AlwaysOff
             end
         end
     end
@@ -138,6 +162,13 @@ MiscTab:CreateButton({
 })
 
 MiscTab:CreateButton({
+    Name = "Stop Camera Shake",
+    Callback = function()
+        game.Workspace.CurrentCamera.FieldOfView = 60
+    end
+})
+
+MiscTab:CreateButton({
     Name = "Fly",
     Callback = function()
         loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fly-gui-v3-30439"))()
@@ -159,13 +190,6 @@ MiscTab:CreateButton({
 })
 
 MiscTab:CreateButton({
-    Name = "Dex Explorer",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/peyton2465/Dex/master/out.lua"))()
-    end
-})
-
-MiscTab:CreateButton({
     Name = "Anti-AFK",
     Callback = function()
         local vu = game:GetService("VirtualUser")
@@ -177,7 +201,7 @@ MiscTab:CreateButton({
     end
 })
 
--- إعدادات الوقت
+-- تبويب Time Settings
 TimeTab:CreateSlider({
     Name = "Time of Day",
     Range = {0, 24},
@@ -200,5 +224,13 @@ TimeTab:CreateButton({
     Name = "Unfreeze Time",
     Callback = function()
         game.Lighting.ClockTime = game.Lighting.ClockTime
+    end
+})
+
+-- إضافة Dex في تبويب Player
+PlayerTab:CreateButton({
+    Name = "Enable Dex",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DexV2/DexV2/main/DexV2.lua"))()
     end
 })

@@ -16,10 +16,11 @@ local MiscTab = Window:CreateTab("Misc")
 local FunTab = Window:CreateTab("Fun")
 local TimeTab = Window:CreateTab("Time Settings")
 local MusicTab = Window:CreateTab("Music")
+local SocialTab = Window:CreateTab("Social")
 
 -- تبويبات خاصة حسب الماب
 if PlaceId == 2753915549 then
-    -- إذا كان الماب Blox Fruits
+    -- Blox Fruits
     local BloxFruitsTab = Window:CreateTab("Blox Fruits")
     BloxFruitsTab:CreateButton({
         Name = "Run RedZ Hub",
@@ -28,7 +29,7 @@ if PlaceId == 2753915549 then
         end
     })
 elseif PlaceId == 13772394625 or PlaceId == 16281300371 then
-    -- إذا كان الماب Blade Ball
+    -- Blade Ball
     local BladeBallTab = Window:CreateTab("Blade Ball")
     BladeBallTab:CreateButton({
         Name = "Auto Parry",
@@ -37,7 +38,7 @@ elseif PlaceId == 13772394625 or PlaceId == 16281300371 then
         end
     })
 elseif PlaceId == 9872472334 then
-    -- إذا كان الماب Evade
+    -- Evade
     local EvadeTab = Window:CreateTab("Evade")
     EvadeTab:CreateButton({
         Name = "Load Evade Script",
@@ -45,23 +46,8 @@ elseif PlaceId == 9872472334 then
             loadstring(game:HttpGet("https://rawscripts.net/raw/Evade-Evade-The-Best-Free-GUI-Script-lots-of-Features-20718"))()
         end
     })
-elseif PlaceId == 116495829188952 then
-    -- إذا كان الماب Dead Rails
-    local DeadRailsTab = Window:CreateTab("Dead Rails")
-    DeadRailsTab:CreateButton({
-        Name = "SpiderX Hub",
-        Callback = function()
-            loadstring(game:HttpGet("https://rawscripts.net/raw/Dead-Rails-Alpha-New-Update-SpiderXHub-30981"))()
-        end
-    })
-    DeadRailsTab:CreateButton({
-        Name = "SpeedHub X",
-        Callback = function()
-            loadstring(game:HttpGet("https://rawscripts.net/raw/a-literal-baseplate.-Speedhub-X-30971"))()
-        end
-    })
 elseif PlaceId == 16200303170 then
-    -- إذا كان الماب Project Smash
+    -- Project Smash
     local ProjectSmashTab = Window:CreateTab("Project Smash")
     ProjectSmashTab:CreateButton({
         Name = "Load Script",
@@ -70,12 +56,21 @@ elseif PlaceId == 16200303170 then
         end
     })
 elseif PlaceId == 115110570222234 then
-    -- إذا كان الماب Blue Lock
+    -- Blue Lock
     local BlueLockTab = Window:CreateTab("Blue Lock")
     BlueLockTab:CreateButton({
         Name = "Load Blue Lock Script",
         Callback = function()
             loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blue-Lock:-Rivals-Rat-Hub-7-DON-LORENZO-FREE-STYLE-CHANGER-AND-FLOW-NO-KEY-7-30715"))()
+        end
+    })
+elseif PlaceId == 142823291 then
+    -- MM2
+    local MM2Tab = Window:CreateTab("MM2")
+    MM2Tab:CreateButton({
+        Name = "Run Oblivion AUTO EXE",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Oblivion-AUTO-EXE-V1-6063"))()
         end
     })
 end
@@ -257,3 +252,31 @@ TimeTab:CreateButton({
     Name = "Unfreeze Time",
     Callback = function()
         game.Lighting.ClockTime = game.Lighting.ClockTime
+    end
+})
+
+-- إضافة Dex في تبويب Player
+PlayerTab:CreateButton({
+    Name = "Enable Dex",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DexV2/DexV2/main/DexV2.lua"))()
+    end
+})
+
+-- تبويب Social: دعوة سيرفر Discord
+SocialTab:CreateButton({
+    Name = "Join Our Discord",
+    Callback = function()
+        setclipboard("https://discord.gg/W3VwkUj6kf")
+        print("تم نسخ رابط الدعوة إلى الحافظة!")
+    end
+})
+
+-- تبويب Music: زر نسخ ID Map
+MusicTab:CreateButton({
+    Name = "Copy ID Map",
+    Callback = function()
+        setclipboard(tostring(PlaceId))
+        print("تم نسخ ID الماب إلى الحافظة!")
+    end
+})

@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()  -- تحميل Rayfield UI
 local Window = Rayfield:CreateWindow({
-    Name = "Rayfield UI Example",        -- اسم النافذة
-    LoadingTitle = "Loading Rayfield...", -- عنوان التحميل
+    Name = "drakthon",        -- اسم النافذة
+    LoadingTitle = "loding drakrhon...", -- عنوان التحميل
     LoadingSubtitle = "by Drakthon",     -- الاسم الخاص بك
     KeySystem = false                    -- غلق نظام المفاتيح (إذا أردت تفعيله اتركه true)
 })

@@ -16,7 +16,6 @@ local MiscTab = Window:CreateTab("Misc")
 local FunTab = Window:CreateTab("Fun")
 local TimeTab = Window:CreateTab("Time Settings")
 local MusicTab = Window:CreateTab("Music")
-local SocialTab = Window:CreateTab("Social")
 
 -- تبويبات خاصة حسب الماب
 if PlaceId == 2753915549 then
@@ -46,16 +45,18 @@ elseif PlaceId == 9872472334 then
             loadstring(game:HttpGet("https://rawscripts.net/raw/Evade-Evade-The-Best-Free-GUI-Script-lots-of-Features-20718"))()
         end
     })
-elseif PlaceId == 115110570222234 then
-    -- إذا كان الماب Blue Lock
-    local BlueLockTab = Window:CreateTab("Blue Lock")
-    BlueLockTab:CreateButton({
-        Name = "Load Blue Lock Script",
+elseif PlaceId == 16200303170 then
+    -- إذا كان الماب Project Smash
+    local ProjectSmashTab = Window:CreateTab("Project Smash")
+    ProjectSmashTab:CreateButton({
+        Name = "Run Project Smash Script",
         Callback = function()
-            loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blue-Lock:-Rivals-Rat-Hub-7-DON-LORENZO-FREE-STYLE-CHANGER-AND-FLOW-NO-KEY-7-30715"))()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Project-Smash-OP-SCRIPT-12920"))()
         end
     })
 end
+
+-- باقي السكربتات العامة:
 
 -- تبويب Player Settings
 PlayerTab:CreateSlider({
@@ -240,23 +241,5 @@ PlayerTab:CreateButton({
     Name = "Enable Dex",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/DexV2/DexV2/main/DexV2.lua"))()
-    end
-})
-
--- إضافة رابط دعوة سيرفر Discord
-SocialTab:CreateButton({
-    Name = "Join Our Discord",
-    Callback = function()
-        setclipboard("https://discord.gg/W3VwkUj6kf")  -- رابط الدعوة الجديد
-        print("تم نسخ رابط الدعوة إلى الحافظة!")
-    end
-})
-
--- إضافة زر نسخ ID الماب في تبويب Music
-MusicTab:CreateButton({
-    Name = "Copy ID Map",
-    Callback = function()
-        setclipboard(tostring(PlaceId))  -- نسخ الـ ID الخاص بالماب
-        print("تم نسخ ID الماب إلى الحافظة!")
     end
 })

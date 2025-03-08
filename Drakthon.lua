@@ -60,12 +60,12 @@ elseif PlaceId == 16200303170 then
             loadstring(game:HttpGet("https://rawscripts.net/raw/Project-Smash-OP-SCRIPT-12920"))()
         end
     })
-elseif PlaceId == 115110570222234 then
+elseif PlaceId == 115110570222234 or PlaceId == 18668065416 then
     local BlueLockTab = Window:CreateTab("Blue Lock")
     BlueLockTab:CreateButton({
         Name = "Load Blue Lock Script",
         Callback = function()
-            loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blue-Lock:-Rivals-Rat-Hub-7-DON-LORENZO-FREE-STYLE-CHANGER-AND-FLOW-NO-KEY-7-30715"))()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blue-Lock:-Rivals-Rat-Hub-7-UNDETECTED-FREE-STYLE-CHANGER-AND-FLOW-NO-KEY-7-31266"))()
         end
     })
 elseif PlaceId == 16732694052 then

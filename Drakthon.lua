@@ -11,6 +11,7 @@ local PlayerTab = Window:CreateTab("Player Settings")  -- تبويب إعداد�
 local EffectsTab = Window:CreateTab("Effects")         -- تبويب التأثيرات
 local MiscTab = Window:CreateTab("Misc")               -- تبويب Misc
 local FunTab = Window:CreateTab("Fun")                 -- تبويب التسلية
+local TimeTab = Window:CreateTab("Time Settings")      -- تبويب إعدادات الوقت
 
 -- إعدادات سرعة اللاعب
 PlayerTab:CreateSlider({
@@ -257,5 +258,33 @@ MiscTab:CreateButton({
             game.Players.LocalPlayer.Character.Humanoid:Move(Vector3.new(1, 0, 0)) 
             wait(60)  -- الانتظار 60 ثانية قبل تكرار الحركة (كل دقيقة)
         end
+    end
+})
+
+-- إضافة شريط لتعديل الوقت
+TimeTab:CreateSlider({
+    Name = "Time of Day",                    -- اسم الشريط
+    Range = {0, 24},                         -- نطاق الوقت (من 0 إلى 24)
+    Increment = 0.1,                         -- الزيادة في كل مرة
+    Suffix = "Hour",                         -- النص المعروض بعد القيمة
+    CurrentValue = 12,                       -- القيمة الحالية (الوقت الافتراضي)
+    Callback = function(value)               -- وظيفة لتغيير الوقت
+        game.Lighting.TimeOfDay = tostring(value) .. ":00:00"  -- تحديث وقت اليوم
+    end
+})
+
+-- إضافة زر لتجميد الوقت
+TimeTab:CreateButton({
+    Name = "Freeze Time",                    -- اسم الزر
+    Callback = function()                    -- وظيفة لتجميد الوقت
+        game.Lighting.ClockTime = game.Lighting.ClockTime  -- تثبيت الوقت
+    end
+})
+
+-- إضافة زر لإلغاء تجميد الوقت
+TimeTab:CreateButton({
+    Name = "Unfreeze Time",                  -- اسم الزر
+    Callback = function()                    -- وظيفة لإلغاء تجميد الوقت
+        game.Lighting.ClockTime = game.Lighting.ClockTime  -- إعادة السماح بتغيير الوقت
     end
 })

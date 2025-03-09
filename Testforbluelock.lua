@@ -27,7 +27,7 @@ if PlaceId == 2753915549 then
         Callback = function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()
         end
-})
+   })
 elseif PlaceId == 189707 then
     local NaturalTab = Window:CreateTab("Natural Disaster Survival")
     NaturalTab:CreateButton({

@@ -29,7 +29,7 @@ if PlaceId == 2753915549 then
         end
 })
 elseif PlaceId == 189707 then
-    local EvadeTab = Window:CreateTab("Natural Disaster Survival")
+    local NaturalTab = Window:CreateTab("Natural Disaster Survival")
     NaturalTab:CreateButton({
         Name = "Natural Disaster Survival",
         Callback = function()

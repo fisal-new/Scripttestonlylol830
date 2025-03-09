@@ -34,6 +34,12 @@ elseif PlaceId == 189707 then
         Name = "NDS",
         Callback = function()
             loadstring(game:HttpGet("https://rawscripts.net/raw/Natural-Disaster-Survival-NullFire-NDS-24033"))()
+         end 
+    })
+    NaturalTab:CreateButton({
+        Name = "i was here",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Natural-Disaster-Survival-I-was-here-3355"))()
         end
     })
 elseif PlaceId == 13772394625 or PlaceId == 16281300371 then

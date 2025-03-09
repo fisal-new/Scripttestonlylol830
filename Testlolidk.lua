@@ -27,6 +27,34 @@ if PlaceId == 2753915549 then
         Callback = function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()
         end
+   })
+elseif PlaceId == 189707 then
+    local NaturalTab = Window:CreateTab("Natural")
+    NaturalTab:CreateButton({
+        Name = "NDS",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Natural-Disaster-Survival-NullFire-NDS-24033"))()
+         end 
+    })
+    NaturalTab:CreateButton({
+        Name = "i was here",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Natural-Disaster-Survival-I-was-here-3355"))()
+        end
+    })
+elseif PlaceId == 2474168535 then
+    local WestboundTab = Window:CreateTab("west bound")
+    WestboundTab:CreateButton({
+        Name = "Script1 only pc",
+        Callback = function()
+                loadstring(game:HttpGet("https://rawscripts.net/raw/Westbound-Speed-and-Aimbot-and-ESP-and-Teleports-and-More-6503"))()
+         end 
+    })
+    WestboundTab:CreateButton({
+        Name = "script2 only pc",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Westbound-pro-7125"))()
+        end
     })
 elseif PlaceId == 13772394625 or PlaceId == 16281300371 then
     local BladeBallTab = Window:CreateTab("Blade Ball")
@@ -66,6 +94,12 @@ elseif PlaceId == 115110570222234 or PlaceId == 18668065416 then
         Name = "Load Blue Lock Script",
         Callback = function()
             loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blue-Lock:-Rivals-Rat-Hub-7-UNDETECTED-FREE-STYLE-CHANGER-AND-FLOW-NO-KEY-7-31266"))()
+        end
+    })
+  BlueLockTab:CreateButton({
+        Name = "script blue lock don ",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blue-Lock:-Rivals-Good-script-for-new-update-free-Don-Lorenzo-30729"))()
         end
     })
 elseif PlaceId == 16732694052 then

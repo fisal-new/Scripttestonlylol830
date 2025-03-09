@@ -31,9 +31,9 @@ if PlaceId == 2753915549 then
 elseif PlaceId == 189707 then
     local NaturalTab = Window:CreateTab("Natural")
     NaturalTab:CreateButton({
-        Name = "Natural Disaster Survival",
+        Name = "NDS",
         Callback = function()
-            loadstring(game:HttpGet("https://rawscripts.net/raw/Evade-Evade-The-Best-Free-GUI-Script-lots-of-Features-207218"))()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Natural-Disaster-Survival-NullFire-NDS-24033"))()
         end
     })
 elseif PlaceId == 13772394625 or PlaceId == 16281300371 then

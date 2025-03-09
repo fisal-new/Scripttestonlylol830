@@ -27,6 +27,15 @@ if PlaceId == 2753915549 then
         Callback = function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()
         end
+})
+elseif PlaceId == 189707 then
+    local EvadeTab = Window:CreateTab("Natural Disaster Survival")
+    NaturalTab:CreateButton({
+        Name = "Natural Disaster Survival",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Evade-Evade-The-Best-Free-GUI-Script-lots-of-Features-20718"))()
+        end
+    })
     })
 elseif PlaceId == 13772394625 or PlaceId == 16281300371 then
     local BladeBallTab = Window:CreateTab("Blade Ball")

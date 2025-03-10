@@ -133,7 +133,16 @@ elseif PlaceId == 4924922222 then
         end
     })
 end
-
+})
+elseif PlaceId == 107326628277908 then
+    local beacarTab = Window:CreateTab("Be a Car")
+    beacarTab:CreateButton({
+        Name = "be a car script",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Be-a-Car-Inf-Csh-Frm-31206"))()
+         end 
+    })
+end
 -- باقي السكربتات العامة:
 
 -- تبويب Player Settings

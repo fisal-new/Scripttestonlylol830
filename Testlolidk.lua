@@ -130,9 +130,7 @@ elseif PlaceId == 4924922222 then
         Name = "S7 Hub",
         Callback = function()
             loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-S7-hub-30753"))()
-        end
-    })
-end
+      end
 })
 elseif PlaceId == 107326628277908 then
     local beacarTab = Window:CreateTab("Be a Car")

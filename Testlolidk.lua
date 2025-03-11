@@ -140,6 +140,14 @@ elseif PlaceId == 107326628277908 then
             loadstring(game:HttpGet("https://rawscripts.net/raw/Be-a-Car-Inf-Csh-Frm-31206"))()
          end 
     })
+elseif PlaceId == 6961824067 then
+    local fling333Tab = Window:CreateTab("Fling Things and People")
+    fling333Tab:CreateButton({
+          Name = "script1",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Fling-Things-and-People-Blitz-FTAP-Free-Premium-UPDATED-29690"))()
+         end 
+    })
 end
 -- باقي السكربتات العامة:
 

@@ -148,8 +148,6 @@ elseif PlaceId == 6961824067 then
             loadstring(game:HttpGet("https://rawscripts.net/raw/Fling-Things-and-People-Blitz-FTAP-Free-Premium-UPDATED-29690"))()
          end 
     })
-end
-    })
 elseif PlaceId == 103593441753340 or PlaceId == 82775216869079 then
     local findthebuttonTab = Window:CreateTab("find the button [150]")
     findthebuttonTab:CreateButton({
@@ -158,6 +156,7 @@ elseif PlaceId == 103593441753340 or PlaceId == 82775216869079 then
             loadstring(game:HttpGet("https://rawscripts.net/raw/Find-The-Button!-esp-button-and-auto-finish-lv-27417"))()
         end
     })
+end
 -- باقي السكربتات العامة:
 
 -- تبويب Player Settings

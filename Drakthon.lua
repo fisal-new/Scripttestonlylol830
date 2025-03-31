@@ -97,6 +97,13 @@ elseif PlaceId == 115110570222234 or PlaceId == 18668065416 then
             loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blue-Lock:-Rivals-Rat-Hub-7-UNDETECTED-FREE-STYLE-CHANGER-AND-FLOW-NO-KEY-7-31266"))()
         end
     })
+
+  BlueLockTab:CreateButton({
+        Name = "script blue lock need key1🔐",
+        Callback = function()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/selciawashere/screepts/refs/heads/main/BLRTBDKEYSYS",true))()
+        end
+    })
   BlueLockTab:CreateButton({
         Name = "script blue lock don ",
         Callback = function()

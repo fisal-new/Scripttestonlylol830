@@ -103,6 +103,13 @@ elseif PlaceId == 115110570222234 or PlaceId == 18668065416 then
             loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blue-Lock:-Rivals-Good-script-for-new-update-free-Don-Lorenzo-30729"))()
         end
     })
+    
+  BlueLockTab:CreateButton({
+        Name = "Ns hub need key🔐",
+        Callback = function()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/fo/refs/heads/main/ot"))()
+        end
+    })
 elseif PlaceId == 16732694052 then
     local FischTab = Window:CreateTab("Fisch")
     FischTab:CreateButton({

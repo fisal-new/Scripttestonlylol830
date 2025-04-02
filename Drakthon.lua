@@ -30,9 +30,9 @@ if PlaceId == 2753915549 then
         end
    })
     BloxFruitsTab:CreateButton({
-        Name = "test",
+        Name = "Solix hub",
         Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()   
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/debunked69/Solixreworkkeysystem/refs/heads/main/solix%20new%20keyui.lua"))() 
     end
         }) 
         elseif PlaceId == 189707 then

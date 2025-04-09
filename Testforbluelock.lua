@@ -1,3 +1,4 @@
+--طبعا هذا سكربت من نوركس وهو open source🥰
 -- الحصول على الـ PlaceId الحالي
 local PlaceId = game.PlaceId  
 
@@ -25,10 +26,16 @@ if PlaceId == 2753915549 then
     BloxFruitsTab:CreateButton({
         Name = "Run RedZ Hub",
         Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/newredz/BloxFruits/refs/heads/main/Source.luau"))(Settings)
         end
    })
-elseif PlaceId == 189707 then
+    BloxFruitsTab:CreateButton({
+        Name = "Solix hub",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/debunked69/Solixreworkkeysystem/refs/heads/main/solix%20new%20keyui.lua"))() 
+    end
+        }) 
+        elseif PlaceId == 189707 then
     local NaturalTab = Window:CreateTab("Natural")
     NaturalTab:CreateButton({
         Name = "NDS",
@@ -40,6 +47,20 @@ elseif PlaceId == 189707 then
         Name = "i was here",
         Callback = function()
             loadstring(game:HttpGet("https://rawscripts.net/raw/Natural-Disaster-Survival-I-was-here-3355"))()
+        end
+    })
+elseif PlaceId == 2474168535 then
+    local WestboundTab = Window:CreateTab("west bound")
+    WestboundTab:CreateButton({
+        Name = "Script1 only pc",
+        Callback = function()
+                loadstring(game:HttpGet("https://rawscripts.net/raw/Westbound-Speed-and-Aimbot-and-ESP-and-Teleports-and-More-6503"))()
+         end 
+    })
+    WestboundTab:CreateButton({
+        Name = "script2 only pc",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Westbound-pro-7125"))()
         end
     })
 elseif PlaceId == 13772394625 or PlaceId == 16281300371 then
@@ -82,10 +103,24 @@ elseif PlaceId == 115110570222234 or PlaceId == 18668065416 then
             loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blue-Lock:-Rivals-Rat-Hub-7-UNDETECTED-FREE-STYLE-CHANGER-AND-FLOW-NO-KEY-7-31266"))()
         end
     })
+
+  BlueLockTab:CreateButton({
+        Name = "script blue lock need key1🔐",
+        Callback = function()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/selciawashere/screepts/refs/heads/main/BLRTBDKEYSYS",true))()
+        end
+    })
   BlueLockTab:CreateButton({
         Name = "script blue lock don ",
         Callback = function()
             loadstring(game:HttpGet("https://rawscripts.net/raw/UPD-Blue-Lock:-Rivals-Good-script-for-new-update-free-Don-Lorenzo-30729"))()
+        end
+    })
+    
+  BlueLockTab:CreateButton({
+        Name = "Ns hub need key🔐",
+        Callback = function()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/fo/refs/heads/main/ot"))()
         end
     })
 elseif PlaceId == 16732694052 then
@@ -116,10 +151,33 @@ elseif PlaceId == 4924922222 then
         Name = "S7 Hub",
         Callback = function()
             loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-S7-hub-30753"))()
+      end
+})
+elseif PlaceId == 107326628277908 then
+    local beacarTab = Window:CreateTab("Be a Car")
+    beacarTab:CreateButton({
+        Name = "be a car script",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Be-a-Car-Inf-Csh-Frm-31206"))()
+         end 
+    })
+elseif PlaceId == 6961824067 then
+    local fling333Tab = Window:CreateTab("Fling Things and People")
+    fling333Tab:CreateButton({
+          Name = "script1",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Fling-Things-and-People-Blitz-FTAP-Free-Premium-UPDATED-29690"))()
+         end 
+    })
+elseif PlaceId == 103593441753340 or PlaceId == 82775216869079 then
+    local findthebuttonTab = Window:CreateTab("find the button [150]")
+    findthebuttonTab:CreateButton({
+        Name = "Auto finish gui",
+        Callback = function()
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Find-The-Button!-esp-button-and-auto-finish-lv-27417"))()
         end
     })
 end
-
 -- باقي السكربتات العامة:
 
 -- تبويب Player Settings
